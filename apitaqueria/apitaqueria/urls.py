@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from apitacos.views import TacosList,Tacosdetalle
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+	url(r'^api/', TacosList.as_view()),
+    url(r'^api2/(?P<pk>[0-9]+)/$', Tacosdetalle.as_view()),   
 ]
+
+    
+
